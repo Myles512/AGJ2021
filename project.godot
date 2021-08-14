@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 
 Bgm="*res://Scenes/BGM.tscn"
 GameManager="*res://Scenes/GameManager.tscn"
+MouseManager="*res://Scenes/MouseManager.tscn"
 
 [input]
 

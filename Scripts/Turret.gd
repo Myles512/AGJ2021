@@ -97,14 +97,20 @@ func _input(event):
 
 func _on_PickupArea_mouse_entered():
 	mouse_in_drag = true
+	MouseManager.changeAnim("grabbing")
 #	print("can drag")
 
 func _on_PickupArea_mouse_exited():
 	mouse_in_drag = false
+	MouseManager.changeAnim("rotate")
+
 
 func _on_RotateArea_mouse_entered():
 	mouse_in_rotate = true
 #	print("can rotate")
+	MouseManager.changeAnim("rotate")
+
 
 func _on_RotateArea_mouse_exited():
 	mouse_in_rotate = false
+	MouseManager.changeAnim(null)
