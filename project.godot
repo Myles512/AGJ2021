@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="AGJ2021"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/LevelSelect.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Bgm="*res://Scenes/BGM.tscn"
+GameManager="*res://Scenes/GameManager.tscn"
 
 [input]
 

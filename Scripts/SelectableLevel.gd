@@ -9,7 +9,7 @@ signal startLevel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Sprite.visible = unlocked
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +20,9 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if mouseInBox:
 			emit_signal("startLevel")
+
+func updatedLocked(locked):
+	$Sprite.visible = !locked
 
 
 func _on_Area2D_mouse_entered():
