@@ -19,4 +19,5 @@ margin_right = 1027.0
 margin_bottom = 600.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 849.634, 271.748 )
 current = true

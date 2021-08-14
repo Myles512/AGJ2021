@@ -35,7 +35,7 @@ func laser():
 		$DebugLaser.set_point_position(1, testpoint)
 		$DebugLaser.visible = true
 	var result = space_state.intersect_ray($Laserstart.position, testpoint, [self])
-	print(result.size())
+	#print(result.size())
 #	if result.collider != null:
 #		print(result[0].collider.name)
 

@@ -19,7 +19,7 @@ func _ready():
 
 func _process(delta):
 	if selectedRealWorldItem:
-		selectedRealWorldItem.position = get_global_mouse_position()
+		selectedRealWorldItem.position = get_tree().root.get_node("Main").get_global_mouse_position()
 
 func _input(event):
 	if event.is_action_pressed("mouse_left_button"):
@@ -38,11 +38,13 @@ func _input(event):
 			for i in selectedItems:
 				updateItemCount(i, -1)
 		else:
-			var pos = get_global_mouse_position()
+			#var pos = get_global_mouse_position()
+			var pos = get_tree().root.get_node("Main").get_global_mouse_position()#get_global_transform()
 			var intersects = get_world_2d().get_direct_space_state().intersect_point(
 					pos, 32, [], 0x7FFFFFFF, true, true)
 			for i in intersects:
 				selectedRealWorldItem = i["collider"].owner
+				print("something was hit")
 				break
 
 	if event.is_action_released("mouse_left_button"):
