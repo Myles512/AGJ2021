@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/AGJ2021 untitled track 1.mp3-887da2c79e1e6bf1c827e266755a9b8f.mp3str"
+
+[deps]
+
+source_file="res://SFX/Background Music/AGJ2021 untitled track 1.mp3"
+dest_files=[ "res://.import/AGJ2021 untitled track 1.mp3-887da2c79e1e6bf1c827e266755a9b8f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
