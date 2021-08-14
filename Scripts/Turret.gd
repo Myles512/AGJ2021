@@ -40,11 +40,11 @@ func make_laser():
 	if next_laser == null:
 		var new_laser = laser_scene.instance()
 #		new_laser.position = 
-		new_laser.laser_root_source = self
 		root_node.add_child(new_laser)
 		next_laser = new_laser
 	next_laser.position = to_global($Laserstart.position)
 	next_laser.rotation_degrees = rotation_degrees
+	next_laser.originating_turret = self
 	
 #func make_laser():
 #	if lasers_array.size() == 0:
