@@ -10,7 +10,6 @@ radius = 21.0
 radius = 46.0109
 
 [node name="Turret" type="Node2D"]
-position = Vector2( 203, 200 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

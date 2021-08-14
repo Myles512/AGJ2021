@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GFX/turret.png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Inventory.gd" type="Script" id=3]
+
+[node name="Inventory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -505.0
+items = [ "Turret 1", ExtResource( 1 ), false, "Godot Icon", ExtResource( 2 ), false, "Also Godot", ExtResource( 2 ), false ]
+max_columns = 8
+same_column_width = true
+icon_mode = 0
+fixed_icon_size = Vector2( 64, 64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="mouse_entered" from="ItemList" to="." method="_on_ItemList_mouse_entered"]
+[connection signal="mouse_exited" from="ItemList" to="." method="_on_ItemList_mouse_exited"]
+[connection signal="nothing_selected" from="ItemList" to="." method="_on_ItemList_nothing_selected"]
