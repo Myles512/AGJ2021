@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/LightGoal.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ElecBomb.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/PowerField.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/MainTileset.tres" type="TileSet" id=5]
@@ -22,7 +21,7 @@ laser_distance = 300
 on = false
 
 [node name="LightGoal" parent="." instance=ExtResource( 1 )]
-position = Vector2( 831.778, 92.3395 )
+position = Vector2( 938.565, 96.344 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 559.532, 328.243 )
@@ -31,8 +30,5 @@ zoom = Vector2( 2, 2 )
 
 [node name="PowerField" parent="." instance=ExtResource( 3 )]
 position = Vector2( 78, 569 )
-
-[node name="ElecBomb" parent="." instance=ExtResource( 2 )]
-position = Vector2( 955.947, 531.524 )
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]
