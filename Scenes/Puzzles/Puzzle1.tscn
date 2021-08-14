@@ -17,7 +17,6 @@ tile_data = PoolIntArray( -131077, -1610612734, 0, -131076, -1610612734, 0, -131
 
 [node name="Turret" parent="." instance=ExtResource( 4 )]
 position = Vector2( 426.312, 563.186 )
-laser_distance = 300
 on = false
 
 [node name="LightGoal" parent="." instance=ExtResource( 1 )]

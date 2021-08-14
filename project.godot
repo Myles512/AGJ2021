@@ -34,6 +34,7 @@ mouse_left_button={
 2d_physics/layer_2="object_drag_area"
 2d_physics/layer_3="turret"
 2d_physics/layer_4="wall"
+2d_physics/layer_5="goal"
 
 [physics]
 

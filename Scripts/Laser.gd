@@ -29,8 +29,10 @@ func _physics_process(delta):
 	set_point_position(0, start_pos)
 	set_point_position(1, end_pos)
 	#visible = originating_turret.on
+	if originating_turret == null:
+		queue_free()
 	#turn off all lasers if the originating turret is off
-	if !originating_turret.on:
+	elif !originating_turret.on:
 		visible = false
 		turn_off_next_laser(visible)
 		turn_off_object()
