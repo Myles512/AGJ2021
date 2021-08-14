@@ -1,14 +1,16 @@
 extends Node2D
 
 
-var levelSelected = null
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var i = 1
 	for child in $"Tower Level Select".get_children():
 		child.connect("levelSelected", self, "updateSelectedLevel")
 		child.connect("startLevel", self, "startLevel")
+		if i-1 in GameManager.levelsComplete:	# if prev level complete, unlock this level
+			child.unlocked = true
+			child.updatedLocked(child.unlocked)
+		i += 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,9 +18,8 @@ func _ready():
 #	pass
 
 func updateSelectedLevel(id):
-	levelSelected = id
-	print("level is now: " + str(levelSelected))
+	GameManager.curLevel = id
 
 
 func startLevel():
-	get_tree().change_scene("res://Scenes/Puzzles/Puzzle" + str(levelSelected) + ".tscn")
+	get_tree().change_scene("res://Scenes/Puzzles/Puzzle" + str(GameManager.curLevel) + ".tscn")

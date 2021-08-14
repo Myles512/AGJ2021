@@ -18,16 +18,47 @@ __meta__ = {
 }
 
 [node name="Turret" parent="." instance=ExtResource( 1 )]
-position = Vector2( 511, 268 )
+position = Vector2( 253, 491 )
+
+[node name="Turret2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 411, 444 )
 
 [node name="ReflectiveSurface" parent="." instance=ExtResource( 2 )]
-position = Vector2( 496, 130 )
-rotation = 0.575959
+position = Vector2( 581, 86 )
+rotation = 0.785398
+scale = Vector2( 3, 3 )
 
 [node name="ReflectiveSurface3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 830, 215 )
-rotation = 0.785398
+position = Vector2( 908, 140 )
+rotation = 1.309
+scale = Vector2( 3, 3 )
+
+[node name="ReflectiveSurface4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 777, 264 )
+rotation = 0.336354
+scale = Vector2( 3, 3 )
+
+[node name="ReflectiveSurface5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 414, 258 )
+rotation = 1.40085
+scale = Vector2( 3, 3 )
+
+[node name="ReflectiveSurface6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 936, 408 )
+rotation = 1.04508
+scale = Vector2( 3, 3 )
+
+[node name="ReflectiveSurface7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 528, 493 )
+rotation = 1.86808
+scale = Vector2( 3, 3 )
+
+[node name="ReflectiveSurface8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 758, 470 )
+rotation = 0.873976
+scale = Vector2( 3, 3 )
 
 [node name="ReflectiveSurface2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 285, 140 )
+position = Vector2( 226, 146 )
 rotation = 0.785398
+scale = Vector2( 3, 8 )
