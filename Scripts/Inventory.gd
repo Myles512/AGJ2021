@@ -19,26 +19,43 @@ func _ready():
 
 func _process(delta):
 	if selectedRealWorldItem:
-		selectedRealWorldItem.position = get_viewport().get_mouse_position()
+		selectedRealWorldItem.position = get_global_mouse_position()
 
 func _input(event):
-	if event.is_action_pressed("mouse_left_button") and mouseInsideBox:
-		#$ItemList.select()
-		var selectedItems = $ItemList.get_selected_items()
-		if len(selectedItems) == 0:
-			return	#nothing to do if nothing is selected
-		var selectedItem = items[selectedItems[0]]
-		if selectedItem[1] <= 0:
-			return	# nothing to do if no items remain
-		var res = load("res://Scenes/Turret.tscn")
-		var obj = res.instance()
-		get_tree().root.add_child(obj)
-		selectedRealWorldItem = obj
+	if event.is_action_pressed("mouse_left_button"):
+		if mouseInsideBox:
+			var selectedItems = $ItemList.get_selected_items()
+			if len(selectedItems) == 0:
+				return	#nothing to do if nothing is selected
+			var selectedItem = items[selectedItems[0]]
+			if selectedItem[1] <= 0:
+				return	# nothing to do if no items remain
+			var res = load("res://Scenes/Turret.tscn")
+			var obj = res.instance()
+			get_tree().root.add_child(obj)
+			selectedRealWorldItem = obj
 
-		for i in selectedItems:
-			updateItemCount(i, -1)
+			for i in selectedItems:
+				updateItemCount(i, -1)
+		else:
+			var pos = get_global_mouse_position()
+			var intersects = get_world_2d().get_direct_space_state().intersect_point(
+					pos, 32, [], 0x7FFFFFFF, true, true)
+			for i in intersects:
+				selectedRealWorldItem = i["collider"].owner
+				break
 
 	if event.is_action_released("mouse_left_button"):
+		updateMouseInsideBox()
+		if mouseInsideBox:
+			if selectedRealWorldItem:
+				var itemName = selectedRealWorldItem.name
+				if "@" in itemName:
+					itemName = str(itemName).split("@")[1]	# duplicate items in the scene are named @Name@#, where # is some number
+				for i in range(len(items)):
+					if items[i][0] == itemName:
+						updateItemCount(i, 1)
+				selectedRealWorldItem.queue_free()
 		selectedRealWorldItem = null
 
 
@@ -61,7 +78,10 @@ func _on_ItemList_mouse_entered():
 func _on_ItemList_mouse_exited():
 	mouseInsideBox = false
 
+func updateMouseInsideBox():
+	var pos = get_global_mouse_position()
+	mouseInsideBox = $ItemList.get_global_rect().has_point(pos)
+
 
 func _on_ItemList_item_selected(index):
-	print("Item selected")
 	pass # Replace with function body.
