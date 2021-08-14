@@ -13,6 +13,7 @@ hframes = 11
 vframes = 10
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+collision_layer = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 shape = SubResource( 1 )
@@ -26,6 +27,7 @@ frame = 2
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Sprite2"]
 position = Vector2( -0.278046, 0 )
+collision_layer = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D2"]
 shape = SubResource( 1 )
@@ -53,6 +55,7 @@ frame = 60
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Sprite14"]
 position = Vector2( 0.423706, -0.271423 )
+collision_layer = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite14/StaticBody2D3"]
 shape = SubResource( 1 )
@@ -66,6 +69,7 @@ frame = 62
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Sprite15"]
 position = Vector2( 0.598694, -0.271423 )
+collision_layer = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite15/StaticBody2D4"]
 shape = SubResource( 1 )

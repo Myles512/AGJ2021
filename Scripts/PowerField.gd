@@ -27,5 +27,5 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_area_exited(area):
 	var obj = area.owner
-	if obj.has_method("setOn"):
+	if is_instance_valid(obj) and obj.has_method("setOn"):
 		obj.setOn(false)
