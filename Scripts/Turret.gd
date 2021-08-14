@@ -13,18 +13,26 @@ var mouse_in_drag = false
 var dragging = false
 var rotating = false
 var next_laser
+var on = true
 
 
 
 func _ready():
-	pass
+	setOn(on)
 
 
 
 func _process(delta):
-	make_laser()
+	if on:
+		make_laser()
 
 
+func setOn(_on):
+	on = _on
+	if on:
+		$Sprite.texture = load("res://GFX/Simple Turret2.png")
+	else:
+		$Sprite.texture = load("res://GFX/Simple Turret1.png")
 
 func make_laser():
 	if next_laser == null:

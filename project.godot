@@ -14,6 +14,10 @@ config/name="AGJ2021"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Bgm="*res://Scenes/BGM.tscn"
+
 [input]
 
 mouse_left_button={
