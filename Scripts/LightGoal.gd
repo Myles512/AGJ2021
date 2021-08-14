@@ -16,6 +16,6 @@ func _ready():
 func setOn(_on):
 	on = _on
 	if on:
-		$Sprite.texture = "res://GFX/Light Goal2.png"
+		$Sprite.texture = load("res://GFX/Light Goal2.png")
 	else:
-		$Sprite.texture = "res://GFX/Light Goal1.png"
+		$Sprite.texture = load("res://GFX/Light Goal1.png")
