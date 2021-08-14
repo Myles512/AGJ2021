@@ -19,7 +19,6 @@ var root_node
 
 
 func _ready():
-	setOn(on)
 	root_node = get_tree().get_current_scene()
 
 
@@ -83,7 +82,8 @@ func _input(event):
 			movement.x *= rotate_speed
 			rotation_degrees += movement.x
 		elif dragging:
-			position += movement
+			#position += movement
+			global_position = root_node.get_global_mouse_position()
 	elif event is InputEventMouseButton:
 		if event.is_pressed():
 			if mouse_in_drag:

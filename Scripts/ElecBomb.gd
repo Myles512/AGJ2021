@@ -6,7 +6,7 @@ var on = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	setOn(on)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +15,7 @@ func _ready():
 
 func setOn(_on):
 	on = _on
+	$PowerField.setOn(on)
 	if on:
 		$Sprite.texture = load("res://GFX/Elec Bomb2.png")
 	else:
