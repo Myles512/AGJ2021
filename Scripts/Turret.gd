@@ -14,11 +14,13 @@ var dragging = false
 var rotating = false
 var next_laser
 var on = true
+var root_node
 
 
 
 func _ready():
 	setOn(on)
+	root_node = get_tree().get_current_scene()
 
 
 
@@ -37,10 +39,13 @@ func setOn(_on):
 func make_laser():
 	if next_laser == null:
 		var new_laser = laser_scene.instance()
-#		new_laser.position = $Laserstart.position
+#		new_laser.position = 
 		new_laser.laser_root_source = self
-		add_child(new_laser)
+		root_node.add_child(new_laser)
 		next_laser = new_laser
+	next_laser.position = to_global($Laserstart.position)
+	next_laser.rotation_degrees = rotation_degrees
+	
 #func make_laser():
 #	if lasers_array.size() == 0:
 #		var new_laser = laser_scene.instance()
