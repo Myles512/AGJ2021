@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Simple Turret2.png-37c79610a3bb68636906e19abc3d8ca4.stex"
+path="res://.import/Light Goal1.png-88dc2658b8a1bc16d4038d04e308cd24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Simple Turret2.png"
-dest_files=[ "res://.import/Simple Turret2.png-37c79610a3bb68636906e19abc3d8ca4.stex" ]
+source_file="res://GFX/Light Goal1.png"
+dest_files=[ "res://.import/Light Goal1.png-88dc2658b8a1bc16d4038d04e308cd24.stex" ]
 
 [params]
 

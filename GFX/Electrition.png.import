@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Simple Turret2.png-37c79610a3bb68636906e19abc3d8ca4.stex"
+path="res://.import/Electrition.png-a7d7ed0a61776864d69a519e8c1b29c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Simple Turret2.png"
-dest_files=[ "res://.import/Simple Turret2.png-37c79610a3bb68636906e19abc3d8ca4.stex" ]
+source_file="res://GFX/Electrition.png"
+dest_files=[ "res://.import/Electrition.png-a7d7ed0a61776864d69a519e8c1b29c7.stex" ]
 
 [params]
 
