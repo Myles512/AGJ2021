@@ -12,21 +12,20 @@ var mouse_in_rotate = false
 var mouse_in_drag = false
 var dragging = false
 var rotating = false
-var next_laser
-var on = true
+var next_laser = null
+export(bool) var on = true
 var root_node
 
 
 
 func _ready():
 	root_node = get_tree().get_current_scene()
-
+	setOn(on)
 
 
 func _process(delta):
 	if on:
 		make_laser()
-
 
 func setOn(_on):
 	on = _on

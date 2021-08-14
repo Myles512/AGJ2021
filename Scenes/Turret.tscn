@@ -19,7 +19,7 @@ __meta__ = {
 }
 laser_scene = ExtResource( 3 )
 rotate_speed = 0.4
-debug_drawraycast = true
+laser_distance = 1000
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -35 )

@@ -28,9 +28,10 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	visible = originating_turret.on
 	if !originating_turret.on:
-		visible = false
-		turn_off_next_laser()
+		#visible = false
+		turn_off_next_laser(visible)
 	elif prev_laser != null and !prev_laser.visible:
 		visible = false
 	elif $RayCast2D.is_colliding():
@@ -58,7 +59,7 @@ func _physics_process(delta):
 #		print(str(test_normalized) + " / " + str(angle))
 #		print(str(angle))
 		if collider.owner.is_in_group("turret"):
-			turn_off_next_laser()
+			turn_off_next_laser(false)
 		else:
 			make_laser()
 			next_laser.visible = true
@@ -70,7 +71,7 @@ func _physics_process(delta):
 			objectHit = null
 		end_pos = start_pos
 		end_pos.y -= laser_distance
-		turn_off_next_laser()
+		turn_off_next_laser(false)
 
 
 
@@ -90,8 +91,8 @@ func make_laser():
 		next_laser.prev_laser = self
 		next_laser.originating_turret = originating_turret
 
-func turn_off_next_laser():
+func turn_off_next_laser(_visible):
 	if next_laser != null:
-		next_laser.visible = false
-		next_laser.turn_off_next_laser()
+		next_laser.visible = _visible
+		next_laser.turn_off_next_laser(_visible)
 

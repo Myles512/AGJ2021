@@ -14,7 +14,7 @@ func _ready():
 #	pass
 
 
-func setOn(_on):
+func specialSetOn(_on):
 	on = _on
 	$AnimatedSprite.visible = on
 	$Area2D/CollisionShape2D.disabled = !on

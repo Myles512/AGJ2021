@@ -15,7 +15,7 @@ func _ready():
 
 func setOn(_on):
 	on = _on
-	$PowerField.setOn(on)
+	$PowerField.specialSetOn(on)
 	if on:
 		$Sprite.texture = load("res://GFX/Elec Bomb2.png")
 	else:
