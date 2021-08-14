@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Elec Bomb Circle.png-b71004ea2d11d82a60964dfbea1f6540.stex"
+path="res://.import/GreenBlock.png-6b4da728cbb0e77e0c0a644fe1c0428f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Elec Bomb Circle.png"
-dest_files=[ "res://.import/Elec Bomb Circle.png-b71004ea2d11d82a60964dfbea1f6540.stex" ]
+source_file="res://GFX/GreenBlock.png"
+dest_files=[ "res://.import/GreenBlock.png-6b4da728cbb0e77e0c0a644fe1c0428f.stex" ]
 
 [params]
 
