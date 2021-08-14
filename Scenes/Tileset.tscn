@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://GFX/Puzzle room tiles.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47.7595, 47.8952 )
 
 [node name="Tileset" type="Node2D"]
 
@@ -9,6 +12,11 @@ texture = ExtResource( 1 )
 hframes = 11
 vframes = 10
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+shape = SubResource( 1 )
+
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 106.634, 0 )
 texture = ExtResource( 1 )
@@ -16,12 +24,11 @@ hframes = 11
 vframes = 10
 frame = 2
 
-[node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 216.041, 0 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 4
+[node name="StaticBody2D2" type="StaticBody2D" parent="Sprite2"]
+position = Vector2( -0.278046, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D2"]
+shape = SubResource( 1 )
 
 [node name="Sprite4" type="Sprite" parent="."]
 position = Vector2( 326.284, 0 )
@@ -37,68 +44,18 @@ hframes = 11
 vframes = 10
 frame = 19
 
-[node name="Sprite6" type="Sprite" parent="."]
-position = Vector2( 563.044, 0 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 21
-
-[node name="Sprite7" type="Sprite" parent="."]
-position = Vector2( 1.60144, 113.137 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 22
-
-[node name="Sprite8" type="Sprite" parent="."]
-position = Vector2( 215.148, 113.137 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 26
-
-[node name="Sprite9" type="Sprite" parent="."]
-position = Vector2( 451.321, 113.137 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 41
-
-[node name="Sprite10" type="Sprite" parent="."]
-position = Vector2( 563.044, 113.137 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 43
-
-[node name="Sprite11" type="Sprite" parent="."]
-position = Vector2( 3.01575, 237.588 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 44
-
-[node name="Sprite12" type="Sprite" parent="."]
-position = Vector2( 110.496, 237.588 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 46
-
-[node name="Sprite13" type="Sprite" parent="."]
-position = Vector2( 220.805, 237.588 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 48
-
 [node name="Sprite14" type="Sprite" parent="."]
 position = Vector2( 432.937, 237.588 )
 texture = ExtResource( 1 )
 hframes = 11
 vframes = 10
 frame = 60
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Sprite14"]
+position = Vector2( 0.423706, -0.271423 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite14/StaticBody2D3"]
+shape = SubResource( 1 )
 
 [node name="Sprite15" type="Sprite" parent="."]
 position = Vector2( 589.914, 237.588 )
@@ -107,12 +64,11 @@ hframes = 11
 vframes = 10
 frame = 62
 
-[node name="Sprite16" type="Sprite" parent="."]
-position = Vector2( 742.649, 237.588 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 64
+[node name="StaticBody2D4" type="StaticBody2D" parent="Sprite15"]
+position = Vector2( 0.598694, -0.271423 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite15/StaticBody2D4"]
+shape = SubResource( 1 )
 
 [node name="Sprite17" type="Sprite" parent="."]
 position = Vector2( -1.22693, 383.252 )
@@ -120,38 +76,3 @@ texture = ExtResource( 1 )
 hframes = 11
 vframes = 10
 frame = 79
-
-[node name="Sprite18" type="Sprite" parent="."]
-position = Vector2( 434.351, 383.252 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 82
-
-[node name="Sprite19" type="Sprite" parent="."]
-position = Vector2( 748.306, 383.252 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 86
-
-[node name="Sprite20" type="Sprite" parent="."]
-position = Vector2( 435.765, 541.644 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 104
-
-[node name="Sprite21" type="Sprite" parent="."]
-position = Vector2( 595.571, 541.644 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 106
-
-[node name="Sprite22" type="Sprite" parent="."]
-position = Vector2( 753.963, 541.644 )
-texture = ExtResource( 1 )
-hframes = 11
-vframes = 10
-frame = 108
