@@ -3,7 +3,7 @@ extends Node2D
 #scene settings
 export(PackedScene) var laser_scene
 export var rotate_speed = 0.01
-export var laser_distance = 100
+export var laser_distance = 500
 
 #debug stuff
 export var debug_drawraycast = false
@@ -12,6 +12,7 @@ var mouse_in_rotate = false
 var mouse_in_drag = false
 var dragging = false
 var rotating = false
+var next_laser
 
 
 
@@ -20,22 +21,43 @@ func _ready():
 
 
 
-func _physics_process(delta):
-	laser()
+func _process(delta):
+	make_laser()
 
 
 
-func laser():
-	var space_state = get_world_2d().direct_space_state
-	var testpoint = Vector2()
-	testpoint += $Laserstart.position
-	testpoint.y -= laser_distance
-	if debug_drawraycast:
-		$DebugLaser.set_point_position(0, $Laserstart.position)
-		$DebugLaser.set_point_position(1, testpoint)
-		$DebugLaser.visible = true
-	var result = space_state.intersect_ray($Laserstart.position, testpoint, [self])
-	#print(result.size())
+func make_laser():
+	if next_laser == null:
+		var new_laser = laser_scene.instance()
+#		new_laser.position = $Laserstart.position
+		new_laser.laser_root_source = self
+		add_child(new_laser)
+		next_laser = new_laser
+#func make_laser():
+#	if lasers_array.size() == 0:
+#		var new_laser = laser_scene.instance()
+#		new_laser.position = $Laserstart.position
+#		new_laser.end_pos.y -= laser_distance
+#		add_child(new_laser)
+#		lasers_array.append(new_laser)
+#	var space_state = get_world_2d().direct_space_state
+#	var testpoint = Vector2()
+#	if $RayCast2D.is_colliding():
+##		print($RayCast2D.get_collider().to_string())
+#		testpoint = transform.xform_inv($RayCast2D.get_collision_point())
+#		var collision_normal = $RayCast2D.get_collision_normal()
+##		print(collision_normal)
+#		var reflected_angle = (testpoint - position).normalized().bounce(collision_normal)
+#		print(reflected_angle)
+#	else:
+#		testpoint += $Laserstart.position
+#		testpoint.y -= laser_distance
+#	if debug_drawraycast:
+#		$DebugLaser.set_point_position(0, $Laserstart.position)
+#		$DebugLaser.set_point_position(1, testpoint)
+#		$DebugLaser.visible = true
+#	var result = space_state.intersect_ray($Laserstart.position, testpoint, [self])
+#	print(result.size())
 #	if result.collider != null:
 #		print(result[0].collider.name)
 

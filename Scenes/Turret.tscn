@@ -15,8 +15,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+laser_scene = ExtResource( 3 )
 rotate_speed = 0.4
-laser_distance = 300
 debug_drawraycast = true
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -35,9 +35,6 @@ shape = SubResource( 2 )
 
 [node name="Laserstart" type="Node2D" parent="."]
 position = Vector2( 0, -72 )
-
-[node name="DebugLaser" parent="." instance=ExtResource( 3 )]
-points = PoolVector2Array( 0, -72, 0, -372 )
 
 [connection signal="mouse_entered" from="PickupArea" to="." method="_on_PickupArea_mouse_entered"]
 [connection signal="mouse_exited" from="PickupArea" to="." method="_on_PickupArea_mouse_exited"]

@@ -18,10 +18,16 @@ __meta__ = {
 }
 
 [node name="Turret" parent="." instance=ExtResource( 1 )]
-position = Vector2( 404, 513 )
+position = Vector2( 598, 509 )
 
 [node name="ReflectiveSurface" parent="." instance=ExtResource( 2 )]
 position = Vector2( 496, 130 )
+rotation = 0.785398
+
+[node name="ReflectiveSurface3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 821, 155 )
+rotation = 0.785398
 
 [node name="ReflectiveSurface2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 285, 140 )
+rotation = 0.785398
