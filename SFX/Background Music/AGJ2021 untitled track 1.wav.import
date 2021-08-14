@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AGJ2021 untitled track 1.wav-571e5898a7df7bbef9d77b12edebcd24.sample"
+
+[deps]
+
+source_file="res://SFX/Background Music/AGJ2021 untitled track 1.wav"
+dest_files=[ "res://.import/AGJ2021 untitled track 1.wav-571e5898a7df7bbef9d77b12edebcd24.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
