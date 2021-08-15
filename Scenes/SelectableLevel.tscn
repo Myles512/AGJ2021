@@ -5,7 +5,7 @@
 [ext_resource path="res://SFX/FX/click_1.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.7246, 8.8382 )
+extents = Vector2( 12, 9 )
 
 [node name="SelectableLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,8 +17,8 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
-position = Vector2( -0.8909, -1.52588e-05 )
-scale = Vector2( 0.450612, 0.05022 )
+position = Vector2( 5.06639e-07, -2.45869e-07 )
+scale = Vector2( 0.4, 0.0517241 )
 texture = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -30,44 +30,44 @@ __meta__ = {
 }
 
 [node name="Tower Level Select" type="Sprite" parent="."]
-position = Vector2( 507.615, 299.628 )
+position = Vector2( 508, 300 )
 texture = ExtResource( 1 )
 
 [node name="SelectableLevel" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, 284.642 )
+position = Vector2( 0, 285 )
 levelID = 1
 unlocked = true
 
 [node name="SelectableLevel2" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, 254.712 )
+position = Vector2( 0, 255 )
 levelID = 2
 
 [node name="SelectableLevel3" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, 225.047 )
+position = Vector2( 0, 225 )
 levelID = 3
 
 [node name="SelectableLevel4" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, 170.485 )
+position = Vector2( 0, 171 )
 levelID = 4
 
 [node name="SelectableLevel5" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, 140.82 )
+position = Vector2( 0, 141 )
 levelID = 5
 
 [node name="SelectableLevel6" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, 111.685 )
+position = Vector2( 0, 111 )
 levelID = 6
 
 [node name="SelectableLevel7" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, 50.7913 )
+position = Vector2( 0, 51 )
 levelID = 7
 
 [node name="SelectableLevel8" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, 21.6073 )
+position = Vector2( 0, 21 )
 levelID = 8
 
 [node name="SelectableLevel9" parent="Tower Level Select" instance=ExtResource( 3 )]
-position = Vector2( 0, -8.69916 )
+position = Vector2( 0, -9 )
 levelID = 9
 
 [node name="Particles2D" type="Particles2D" parent="."]

@@ -39,6 +39,12 @@ position = Vector2( 128.912, 554.858 )
 
 [node name="WallCollisions" parent="." instance=ExtResource( 8 )]
 
+[node name="TopWall" parent="WallCollisions" index="0"]
+position = Vector2( 525, -82 )
+
+[node name="BottomWall" parent="WallCollisions" index="1"]
+position = Vector2( 531, 754 )
+
 [node name="5SegmentNonreflectiveWall" parent="." instance=ExtResource( 5 )]
 position = Vector2( 429, 486 )
 
@@ -54,3 +60,5 @@ position = Vector2( 773, 662 )
 rotation = 1.5708
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]
+
+[editable path="WallCollisions"]

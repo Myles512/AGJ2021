@@ -7,9 +7,6 @@ export var laser_distance = 500
 export(bool) var on = true
 var powerSources = []
 
-#debug stuff
-export var debug_drawraycast = false
-
 var mouse_in_rotate = false
 var mouse_in_drag = false
 var dragging = false
@@ -66,34 +63,6 @@ func make_laser():
 	next_laser.position = to_global($Laserstart.position)
 	next_laser.rotation_degrees = rotation_degrees
 	next_laser.originating_turret = self
-	
-#func make_laser():
-#	if lasers_array.size() == 0:
-#		var new_laser = laser_scene.instance()
-#		new_laser.position = $Laserstart.position
-#		new_laser.end_pos.y -= laser_distance
-#		add_child(new_laser)
-#		lasers_array.append(new_laser)
-#	var space_state = get_world_2d().direct_space_state
-#	var testpoint = Vector2()
-#	if $RayCast2D.is_colliding():
-##		print($RayCast2D.get_collider().to_string())
-#		testpoint = transform.xform_inv($RayCast2D.get_collision_point())
-#		var collision_normal = $RayCast2D.get_collision_normal()
-##		print(collision_normal)
-#		var reflected_angle = (testpoint - position).normalized().bounce(collision_normal)
-#		print(reflected_angle)
-#	else:
-#		testpoint += $Laserstart.position
-#		testpoint.y -= laser_distance
-#	if debug_drawraycast:
-#		$DebugLaser.set_point_position(0, $Laserstart.position)
-#		$DebugLaser.set_point_position(1, testpoint)
-#		$DebugLaser.visible = true
-#	var result = space_state.intersect_ray($Laserstart.position, testpoint, [self])
-#	print(result.size())
-#	if result.collider != null:
-#		print(result[0].collider.name)
 
 
 
@@ -101,8 +70,10 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var movement = event.get_relative()
 		if rotating:
-			movement.x *= rotate_speed
-			rotation_degrees += movement.x
+#			movement.x *= rotate_speed
+#			rotation_degrees += movement.x
+			look_at(root_node.get_local_mouse_position())
+			rotate(PI / 2)
 		elif dragging:
 			if pickup_start_pos == null:
 				pickup_start_pos = global_position
@@ -133,23 +104,11 @@ func _on_PickupArea_mouse_exited():
 	mouse_in_drag = false
 	MouseManager.changeAnim("rotate")
 
-
 func _on_RotateArea_mouse_entered():
 	mouse_in_rotate = true
 #	print("can rotate")
 	MouseManager.changeAnim("rotate")
 
-
 func _on_RotateArea_mouse_exited():
 	mouse_in_rotate = false
 	MouseManager.changeAnim(null)
-
-
-func _on_TurretCollider_body_entered(body):
-	print(body.name)
-	pass # Replace with function body.
-
-
-func _on_TurretCollider_area_entered(area):
-	print(area.name)
-	pass # Replace with function body.
