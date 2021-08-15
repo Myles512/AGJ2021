@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/PowerField.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Elec Bomb Circle.png" type="Texture" id=2]
+[ext_resource path="res://SFX/FX/powerfield_power_up.wav" type="AudioStream" id=3]
+[ext_resource path="res://SFX/FX/powerfield_power_down.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -66,13 +68,18 @@ on = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 10 )
-frame = 7
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 11 )
+
+[node name="Powerup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Powerdown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

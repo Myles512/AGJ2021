@@ -2,6 +2,7 @@ extends "res://Scripts/PickupableObject.gd"
 
 
 var on = false
+var lastOn = false
 var powerSources = []
 
 # Called when the node enters the scene tree for the first time.
@@ -25,8 +26,10 @@ func updatePowerSource(powerSource, active):
 
 func updatePowerState():
 	on = len(powerSources) > 0	# true if greater than 0
-	$PowerField.specialSetOn(on)
-	if on:
-		$Sprite.texture = load("res://GFX/Elec Bomb2.png")
-	else:
-		$Sprite.texture = load("res://GFX/Elec Bomb1.png")
+	if lastOn != on:
+		$PowerField.specialSetOn(on)
+		if on:
+			$Sprite.texture = load("res://GFX/Elec Bomb2.png")
+		else:
+			$Sprite.texture = load("res://GFX/Elec Bomb1.png")
+	lastOn = on

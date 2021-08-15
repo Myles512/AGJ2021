@@ -2,7 +2,7 @@ extends Node2D
 
 
 export(bool) var on = false
-
+var lastPlayedPowerSfx = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +16,17 @@ func _ready():
 
 func specialSetOn(_on):
 	on = _on
+	#print(on)
+	if on and lastPlayedPowerSfx != "up":
+		$Powerup.play()
+#		print(lastPlayedPowerSfx)
+		lastPlayedPowerSfx = "up"
+	elif !on and lastPlayedPowerSfx != "down":
+#		print(lastPlayedPowerSfx)
+		$Powerdown.play()
+		lastPlayedPowerSfx = "down"
+	else:
+		pass
 	$AnimatedSprite.visible = on
 	$Area2D/CollisionShape2D.set_deferred("disabled", !on)
 
