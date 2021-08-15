@@ -6,6 +6,7 @@ var timeOn = 0
 signal poweredOn
 var powerSources = []
 var mouse_pressed = false
+var levelWon = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
