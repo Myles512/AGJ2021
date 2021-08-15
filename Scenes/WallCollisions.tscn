@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Non-ReflectiveSurface.tscn" type="PackedScene" id=1]
+
+[node name="WallCollisions" type="Node2D"]
+
+[node name="TopWall" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 525, -78 )
+scale = Vector2( 39.48, 1 )
+
+[node name="BottomWall" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 531, 752 )
+scale = Vector2( 39.48, 1 )
+
+[node name="LeftWall" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -83, 340 )
+scale = Vector2( 1, 27.08 )
+
+[node name="RightWall" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1137, 341 )
+scale = Vector2( 1, 27.08 )

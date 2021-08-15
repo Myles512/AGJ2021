@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/LightGoal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/WallCollisions.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/PowerField.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/MainTileset.tres" type="TileSet" id=5]
@@ -29,5 +30,7 @@ zoom = Vector2( 2, 2 )
 
 [node name="PowerField" parent="." instance=ExtResource( 3 )]
 position = Vector2( 78, 569 )
+
+[node name="WallCollisions" parent="." instance=ExtResource( 2 )]
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]

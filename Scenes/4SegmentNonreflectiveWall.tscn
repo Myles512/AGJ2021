@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Non-ReflectiveSurface.tscn" type="PackedScene" id=1]
+
+[node name="5SegmentNonreflectiveWall" type="Node2D"]
+
+[node name="Non-ReflectiveSurface" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 144 )
+
+[node name="Non-ReflectiveSurface2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 48 )
+
+[node name="Non-ReflectiveSurface3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -48 )
+
+[node name="Non-ReflectiveSurface4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -144 )
