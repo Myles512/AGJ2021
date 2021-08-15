@@ -24,6 +24,7 @@ func _process(delta):
 			$Timer.start()	# small delay so that the audio finishes playing
 			$Tween.interpolate_property($AudioStreamPlayer, "volume_db", 0, -60, 2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			$Tween.start()
+			$Particles2D.emitting = true
 
 
 func _input(event):
@@ -53,3 +54,4 @@ func updatePowerState():
 
 func _on_Timer_timeout():
 	emit_signal("poweredOn")
+
