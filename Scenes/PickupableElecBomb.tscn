@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/PickupableObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PowerField.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GFX/Elec Bomb1.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/ElecBomb.gd" type="Script" id=4]
+[ext_resource path="res://SFX/FX/powerfield_power_down.wav" type="AudioStream" id=5]
+[ext_resource path="res://SFX/FX/powerfield_power_up.wav" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.9488
@@ -33,3 +35,9 @@ collision_mask = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TurretCollider" index="0"]
 shape = SubResource( 2 )
+
+[node name="PowerDown" type="AudioStreamPlayer" parent="." index="6"]
+stream = ExtResource( 5 )
+
+[node name="PowerUp" type="AudioStreamPlayer" parent="." index="7"]
+stream = ExtResource( 6 )

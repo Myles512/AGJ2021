@@ -4,14 +4,22 @@ extends "res://Scripts/PickupableObject.gd"
 export(bool) var on = false
 var lastOn = null
 var powerSources = []
+var power_up_sound_played = false
+var power_down_sound_played = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	updatePowerState()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if on and !power_up_sound_played:
+		$PowerUp.play()
+		power_up_sound_played = true
+		power_down_sound_played = false
+	elif !on and !power_down_sound_played:
+		$PowerDown.play()
+		power_up_sound_played = false
+		power_down_sound_played = true
 
 func updatePowerSource(powerSource, active):
 	if powerSource == $PowerField:
