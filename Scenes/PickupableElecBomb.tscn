@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/PickupableObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PowerField.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.9488
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 37.0
 
 [node name="ElecBomb" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
@@ -23,3 +26,10 @@ collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource( 1 )
+
+[node name="TurretCollider" type="Area2D" parent="." index="5"]
+collision_layer = 4
+collision_mask = 28
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurretCollider" index="0"]
+shape = SubResource( 2 )
