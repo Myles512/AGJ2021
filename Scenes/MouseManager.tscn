@@ -5,42 +5,34 @@
 [ext_resource path="res://GFX/Grab Symbol.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 96, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 192, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 288, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 384, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=6]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 480, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 576, 0, 96, 96 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 672, 0, 96, 96 )
 
@@ -119,5 +111,5 @@ script = ExtResource( 1 )
 z_index = 2
 frames = SubResource( 20 )
 animation = "rotate"
-frame = 7
+frame = 5
 playing = true

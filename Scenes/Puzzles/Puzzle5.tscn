@@ -34,7 +34,7 @@ on = false
 position = Vector2( 1014.94, 12.6296 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 366.077, 333.587 )
+position = Vector2( 401, 332 )
 current = true
 zoom = Vector2( 2, 2 )
 

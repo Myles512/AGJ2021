@@ -49,10 +49,10 @@ anims/TransitionToBlack = SubResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = -1247.17
-margin_top = -56.0
-margin_right = -77.1675
-margin_bottom = 632.0
+margin_left = -1244.0
+margin_top = -196.0
+margin_right = -74.0
+margin_bottom = 774.0
 mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
