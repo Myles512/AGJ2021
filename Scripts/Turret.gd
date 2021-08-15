@@ -17,6 +17,7 @@ var pickup_start_pos = null
 var can_drop_here = false
 var power_up_sound_played = false
 var power_down_sound_played = true
+var rotate_sound_played = true
 
 func _ready():
 	root_node = get_tree().get_current_scene()
@@ -98,6 +99,7 @@ func _input(event):
 				$Pickup.play()
 			elif mouse_in_rotate:
 				rotating = true
+				$Rotate.play()
 		else:
 			if !can_drop_here && pickup_start_pos != null:
 				global_position = pickup_start_pos
