@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/turret_pickup.wav-ed3d20bff3d61895c46e2b9d519d94e9.sample"
+
+[deps]
+
+source_file="res://SFX/FX/turret_pickup.wav"
+dest_files=[ "res://.import/turret_pickup.wav-ed3d20bff3d61895c46e2b9d519d94e9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

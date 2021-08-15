@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mirror_place.wav-71b08d9bcbdde331e614ff7cd4236174.sample"
+
+[deps]
+
+source_file="res://SFX/FX/mirror_place.wav"
+dest_files=[ "res://.import/mirror_place.wav-71b08d9bcbdde331e614ff7cd4236174.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
