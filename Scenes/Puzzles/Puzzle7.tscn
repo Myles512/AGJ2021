@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/LightGoal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/WallCollisions.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/ElecBomb.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/3SegmentNonreflectiveWall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/5SegmentNonreflectiveWall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/3SegmentTurretPlacable.tscn" type="PackedScene" id=11]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 6 )
@@ -42,20 +43,19 @@ position = Vector2( 78, 569 )
 [node name="WallCollisions" parent="." instance=ExtResource( 2 )]
 
 [node name="5SegmentNonreflectiveWall" parent="." instance=ExtResource( 10 )]
-position = Vector2( 579, 480 )
+position = Vector2( 579, 192 )
 
 [node name="3SegmentNonreflectiveWall" parent="." instance=ExtResource( 9 )]
 position = Vector2( 965, 288 )
 rotation = 1.57079
-
-[node name="3SegmentNonreflectiveWall2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 579, 96 )
-rotation = 3.14159
 
 [node name="5SegmentReflectiveWall" parent="." instance=ExtResource( 7 )]
 position = Vector2( 675, 192 )
 
 [node name="ElecBomb" parent="." instance=ExtResource( 8 )]
 position = Vector2( 800, 684 )
+
+[node name="3SegmentTurretPlacable" parent="." instance=ExtResource( 11 )]
+position = Vector2( 579, 576 )
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]

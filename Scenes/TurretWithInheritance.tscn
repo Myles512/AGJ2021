@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/PickupableObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GFX/Simple Turret2.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/TurretWithInheritance.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Laser.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 91.6324
+
+[node name="Turret" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+laser_scene = ExtResource( 4 )
+on = false
+
+[node name="TurretCollider" type="Area2D" parent="." index="2"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurretCollider" index="0"]
+shape = SubResource( 1 )
+
+[node name="Laserstart" type="Node2D" parent="." index="3"]
+position = Vector2( 0, -72 )
+
+[node name="Sprite" type="Sprite" parent="." index="4"]
+position = Vector2( 0, -35 )
+z_index = 1
+texture = ExtResource( 2 )

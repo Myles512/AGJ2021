@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Light House AGJ2021.mp3-2de79ab73313aa50ad3583e80daafeb8.mp3str"
+
+[deps]
+
+source_file="res://SFX/Background Music/Light House AGJ2021.mp3"
+dest_files=[ "res://.import/Light House AGJ2021.mp3-2de79ab73313aa50ad3583e80daafeb8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

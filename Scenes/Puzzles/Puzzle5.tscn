@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/MainTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/PowerField.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/3SegmentNonreflectiveWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/3SegmentTurretPlacable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/PuzzleManager.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/ElecBomb.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/5SegmentNonreflectiveWall.tscn" type="PackedScene" id=8]
@@ -45,7 +45,10 @@ position = Vector2( 332.749, 618.327 )
 [node name="5SegmentNonreflectiveWall" parent="." instance=ExtResource( 8 )]
 position = Vector2( 423, 191 )
 
-[node name="3SegmentNonreflectiveWall" parent="." instance=ExtResource( 5 )]
+[node name="3SegmentTurretPlacable" parent="." instance=ExtResource( 5 )]
 position = Vector2( 423, 575 )
+
+[node name="3SegmentTurretPlacable2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 519, 575 )
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]

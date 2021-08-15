@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/PickupableObject.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 45.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 91.6324
+
+[node name="PickupableObject" type="Node2D"]
+script = ExtResource( 1 )
+rotate_speed = 0.4
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource( 1 )
+
+[node name="RotateArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RotateArea"]
+shape = SubResource( 2 )
+
+[connection signal="mouse_entered" from="PickupArea" to="." method="_on_PickupArea_mouse_entered"]
+[connection signal="mouse_exited" from="PickupArea" to="." method="_on_PickupArea_mouse_exited"]
+[connection signal="mouse_entered" from="RotateArea" to="." method="_on_RotateArea_mouse_entered"]
+[connection signal="mouse_exited" from="RotateArea" to="." method="_on_RotateArea_mouse_exited"]

@@ -5,6 +5,7 @@ var on = false
 var timeOn = 0
 signal poweredOn
 var powerSources = []
+var mouse_pressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,10 +14,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if on:
+	if on and !mouse_pressed:
 		timeOn += delta
 	if timeOn > 1:
-		emit_signal("poweredOn")
+		if not levelWon:
+			emit_signal("poweredOn")
+			levelWon = true
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			mouse_pressed = true
+		else:
+			mouse_pressed = false
+
 
 func updatePowerSource(powerSource, active):
 	if active:
