@@ -16,7 +16,7 @@ var root_node
 var pickup_start_pos = null
 var can_drop_here = false
 var power_up_sound_played = false
-var power_down_sound_played = false
+var power_down_sound_played = true
 
 func _ready():
 	root_node = get_tree().get_current_scene()
