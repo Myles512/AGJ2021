@@ -5,6 +5,7 @@ var on = false
 var timeOn = 0
 signal poweredOn
 var powerSources = []
+var levelWon = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +17,9 @@ func _process(delta):
 	if on:
 		timeOn += delta
 	if timeOn > 1:
-		emit_signal("poweredOn")
+		if not levelWon:
+			emit_signal("poweredOn")
+			levelWon = true
 
 func updatePowerSource(powerSource, active):
 	if active:

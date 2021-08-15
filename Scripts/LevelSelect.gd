@@ -23,6 +23,5 @@ func updateSelectedLevel(id):
 
 func startLevel():
 	if GameManager.curLevel != null:
-		var err = get_tree().change_scene("res://Scenes/Puzzles/Puzzle" + str(GameManager.curLevel) + ".tscn")
-		if err:
-			print(err, "Error with scene change")
+		var levelName = "res://Scenes/Puzzles/Puzzle" + str(GameManager.curLevel) + ".tscn"
+		LevelTransition.transitionTo(false, levelName)
