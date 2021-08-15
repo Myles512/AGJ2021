@@ -15,10 +15,25 @@ var next_laser = null
 var root_node
 var pickup_start_pos = null
 var can_drop_here = false
+var power_up_sound_played = false
+var power_down_sound_played = true
 
 func _ready():
 	root_node = get_tree().get_current_scene()
 	updatePowerState()
+
+
+
+func _process(_delta):
+	if on and !power_up_sound_played:
+		$PowerUp.play()
+		power_up_sound_played = true
+		power_down_sound_played = false
+	elif !on and !power_down_sound_played:
+		$PowerDown.play()
+		power_up_sound_played = false
+		power_down_sound_played = true
+
 
 
 func _physics_process(_delta):
@@ -48,10 +63,8 @@ func updatePowerState():
 
 func set_texture():
 	if on:
-		$PowerUp.play()
 		$Sprite.texture = load("res://GFX/Simple Turret2.png")
 	else:
-		$PowerDown.play()
 		$Sprite.texture = load("res://GFX/Simple Turret1.png")
 
 func make_laser():
@@ -68,7 +81,7 @@ func make_laser():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		var movement = event.get_relative()
+		#var movement = event.get_relative()
 		if rotating:
 #			movement.x *= rotate_speed
 #			rotation_degrees += movement.x

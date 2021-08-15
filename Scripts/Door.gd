@@ -1,12 +1,13 @@
 extends "res://Scripts/PickupableObject.gd"
 
 
-export(bool) var on = false
-var lastOn = null
+var on = false
 var powerSources = []
+var original_door_pos
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	original_door_pos = $"3SegmentNonreflectiveWall".position
 	updatePowerState()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,8 +15,6 @@ func _ready():
 #	pass
 
 func updatePowerSource(powerSource, active):
-	if powerSource == $PowerField:
-		return	# no point updating self
 	if active:
 		if not powerSources.has(powerSource):
 			powerSources.append(powerSource)
@@ -26,10 +25,11 @@ func updatePowerSource(powerSource, active):
 
 func updatePowerState():
 	on = len(powerSources) > 0	# true if greater than 0
-	if lastOn != on:
-		$PowerField.specialSetOn(on)
-		if on:
-			$Sprite.texture = load("res://GFX/Elec Bomb2.png")
-		else:
-			$Sprite.texture = load("res://GFX/Elec Bomb1.png")
-	lastOn = on
+	if on:
+		var new_door_pos = original_door_pos
+		new_door_pos.y += 1000
+		$"3SegmentNonreflectiveWall".position = new_door_pos
+		$Sprite.texture = load("res://GFX/Elec Bomb2.png")
+	else:
+		$"3SegmentNonreflectiveWall".position = original_door_pos
+		$Sprite.texture = load("res://GFX/Elec Bomb1.png")

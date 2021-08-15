@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/powerfield_power_up.wav-a5ce9f007258512f7f8be83d20b0eed1.sample"
+
+[deps]
+
+source_file="res://SFX/FX/powerfield_power_up.wav"
+dest_files=[ "res://.import/powerfield_power_up.wav-a5ce9f007258512f7f8be83d20b0eed1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

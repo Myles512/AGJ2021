@@ -3,7 +3,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/LevelTransition.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "TransitionFromBlack"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/TextureRect:rect_position")
@@ -18,8 +18,7 @@ tracks/0/keys = {
 "values": [ Vector2( -83, -56 ), Vector2( -1247.17, -56 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "TransitionToBlack"
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/TextureRect:rect_position")
 tracks/0/interp = 2
@@ -43,8 +42,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/TransitionFromBlack = SubResource( 2 )
-anims/TransitionToBlack = SubResource( 1 )
+anims/TransitionFromBlack = SubResource( 1 )
+anims/TransitionToBlack = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

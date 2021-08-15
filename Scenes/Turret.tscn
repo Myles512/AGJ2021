@@ -68,7 +68,5 @@ stream = ExtResource( 4 )
 [connection signal="mouse_exited" from="PickupArea" to="." method="_on_PickupArea_mouse_exited"]
 [connection signal="mouse_entered" from="RotateArea" to="." method="_on_RotateArea_mouse_entered"]
 [connection signal="mouse_exited" from="RotateArea" to="." method="_on_RotateArea_mouse_exited"]
-[connection signal="area_entered" from="TurretCollider" to="." method="_on_TurretCollider_area_entered"]
-[connection signal="body_entered" from="TurretCollider" to="." method="_on_TurretCollider_body_entered"]
 [connection signal="mouse_entered" from="TurretCollider" to="." method="_on_RotateArea_mouse_entered"]
 [connection signal="mouse_exited" from="TurretCollider" to="." method="_on_RotateArea_mouse_exited"]

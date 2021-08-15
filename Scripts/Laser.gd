@@ -68,7 +68,7 @@ func _physics_process(_delta):
 			next_laser.rotation_degrees = angle + 90 #abs(angle)
 			next_laser.visible = true
 	else:
-		turn_off_object()
+		#turn_off_object()
 		end_pos = start_pos
 		end_pos.y -= laser_distance
 		turn_off_next_laser(false)

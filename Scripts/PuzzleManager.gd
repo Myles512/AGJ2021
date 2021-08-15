@@ -13,5 +13,4 @@ func _ready():
 
 func _on_LightGoal_poweredOn():
 	GameManager.markLevelAsCompleted()
-	MouseManager.changeAnim(null)
 	LevelTransition.transitionTo(false, "res://Scenes/LevelSelect.tscn")
