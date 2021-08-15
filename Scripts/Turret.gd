@@ -16,8 +16,8 @@ var dragging = false
 var rotating = false
 var next_laser = null
 var root_node
-
-
+var pickup_start_pos = null
+var can_drop_here = false
 
 func _ready():
 	root_node = get_tree().get_current_scene()
@@ -28,6 +28,13 @@ func _physics_process(delta):
 	if on:
 		make_laser()
 		next_laser.visible = true
+	var overlapping_bodies = $TurretCollider.get_overlapping_areas()
+	if overlapping_bodies.size() > 0:
+		can_drop_here = false
+		$Sprite.modulate = Color(1, 0, 0)
+	else:
+		can_drop_here = true
+		$Sprite.modulate = Color(1, 1, 1)
 
 func updatePowerSource(powerSource, active):
 	if active:
@@ -95,7 +102,8 @@ func _input(event):
 			movement.x *= rotate_speed
 			rotation_degrees += movement.x
 		elif dragging:
-			#position += movement
+			if pickup_start_pos == null:
+				pickup_start_pos = global_position
 			global_position = root_node.get_global_mouse_position()
 	elif event is InputEventMouseButton:
 		if event.is_pressed():
@@ -104,6 +112,9 @@ func _input(event):
 			elif mouse_in_rotate:
 				rotating = true
 		else:
+			if !can_drop_here && pickup_start_pos != null:
+				global_position = pickup_start_pos
+			pickup_start_pos = null
 			dragging = false
 			rotating = false
 
@@ -128,3 +139,13 @@ func _on_RotateArea_mouse_entered():
 func _on_RotateArea_mouse_exited():
 	mouse_in_rotate = false
 	MouseManager.changeAnim(null)
+
+
+func _on_TurretCollider_body_entered(body):
+	print(body.name)
+	pass # Replace with function body.
+
+
+func _on_TurretCollider_area_entered(area):
+	print(area.name)
+	pass # Replace with function body.
