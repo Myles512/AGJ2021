@@ -76,3 +76,9 @@ amount = 800
 lifetime = 10.0
 preprocess = 1.0
 process_material = SubResource( 1 )
+
+[node name="CreditsLevel" parent="." instance=ExtResource( 3 )]
+position = Vector2( 508, 153.114 )
+levelID = 9
+
+[connection signal="startLevel" from="CreditsLevel" to="." method="_on_CreditsLevel_startLevel"]
