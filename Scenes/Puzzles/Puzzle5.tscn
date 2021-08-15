@@ -49,9 +49,6 @@ position = Vector2( 423, 191 )
 [node name="3SegmentTurretPlacable" parent="." instance=ExtResource( 5 )]
 position = Vector2( 423, 575 )
 
-[node name="3SegmentTurretPlacable2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 519, 575 )
-
 [node name="WallCollisions" parent="." instance=ExtResource( 9 )]
 
 [node name="CollisionShape2D" parent="WallCollisions/TopWall" index="0"]
