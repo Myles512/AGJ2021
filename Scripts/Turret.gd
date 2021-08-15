@@ -5,6 +5,7 @@ export(PackedScene) var laser_scene
 export var rotate_speed = 0.01
 export var laser_distance = 500
 export(bool) var on = true
+var powerSources = []
 
 #debug stuff
 export var debug_drawraycast = false
@@ -20,7 +21,7 @@ var root_node
 
 func _ready():
 	root_node = get_tree().get_current_scene()
-	setOn(on)
+	updatePowerState()
 
 
 func _physics_process(delta):
@@ -28,8 +29,17 @@ func _physics_process(delta):
 		make_laser()
 		next_laser.visible = true
 
-func setOn(_on):
-	on = _on
+func updatePowerSource(powerSource, active):
+	if active:
+		if not powerSources.has(powerSource):
+			powerSources.append(powerSource)
+	else:
+		if powerSources.has(powerSource):
+			powerSources.remove(powerSources.find(powerSource))
+	updatePowerState()
+
+func updatePowerState():
+	on = len(powerSources) > 0	# true if greater than 0
 	set_texture()
 
 func set_texture():

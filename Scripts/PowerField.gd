@@ -21,11 +21,11 @@ func specialSetOn(_on):
 
 func _on_Area2D_area_entered(area):
 	var obj = area.owner
-	if obj.has_method("setOn"):
-		obj.setOn(true)
+	if obj.has_method("updatePowerSource"):
+		obj.updatePowerSource(self, true)
 
 
 func _on_Area2D_area_exited(area):
 	var obj = area.owner
-	if is_instance_valid(obj) and obj.has_method("setOn"):
-		obj.setOn(false)
+	if is_instance_valid(obj) and obj.has_method("updatePowerSource"):
+		obj.updatePowerSource(self, false)

@@ -84,8 +84,8 @@ func turn_off_object():
 
 
 func updateHittingObject(obj, hitting):
-	if obj.has_method("setOn"):
-		obj.setOn(hitting)
+	if obj.has_method("updatePowerSource"):
+		obj.updatePowerSource(originating_turret, hitting)
 
 
 
