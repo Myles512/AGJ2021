@@ -20,7 +20,11 @@ tile_data = PoolIntArray( -131077, -1610612734, 0, -131076, -1610612734, 0, -131
 [node name="Turret" parent="." instance=ExtResource( 2 )]
 position = Vector2( 60.0235, 44.7049 )
 rotation = 1.57079
-laser_distance = 200
+on = false
+
+[node name="Turret2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 52.4639, 223.614 )
+rotation = 1.57079
 on = false
 
 [node name="LightGoal" parent="." instance=ExtResource( 1 )]
@@ -46,10 +50,6 @@ scale = Vector2( 10, 2 )
 
 [node name="ReflectiveSurface" parent="." instance=ExtResource( 7 )]
 position = Vector2( 534.19, 30.131 )
-scale = Vector2( 8, 3 )
-
-[node name="ReflectiveSurface2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 808.853, 517.72 )
 scale = Vector2( 8, 3 )
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]

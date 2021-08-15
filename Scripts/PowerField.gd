@@ -14,7 +14,7 @@ func _ready():
 #	pass
 
 
-func setOn(_on):
+func specialSetOn(_on):
 	on = _on
 	$AnimatedSprite.visible = on
 	$Area2D/CollisionShape2D.disabled = !on
@@ -27,5 +27,5 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_area_exited(area):
 	var obj = area.owner
-	if obj.has_method("setOn"):
+	if is_instance_valid(obj) and obj.has_method("setOn"):
 		obj.setOn(false)

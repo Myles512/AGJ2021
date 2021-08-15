@@ -9,7 +9,7 @@ func _ready():
 		child.connect("startLevel", self, "startLevel")
 		if i-1 in GameManager.levelsComplete:	# if prev level complete, unlock this level
 			child.unlocked = true
-			child.updatedLocked(child.unlocked)
+			child.updatedLocked(false)
 		i += 1
 
 

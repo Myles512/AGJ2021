@@ -4,6 +4,7 @@ extends Node2D
 export(PackedScene) var laser_scene
 export var rotate_speed = 0.01
 export var laser_distance = 500
+export(bool) var on = true
 
 #debug stuff
 export var debug_drawraycast = false
@@ -12,24 +13,26 @@ var mouse_in_rotate = false
 var mouse_in_drag = false
 var dragging = false
 var rotating = false
-var next_laser
-var on = true
+var next_laser = null
 var root_node
 
 
 
 func _ready():
 	root_node = get_tree().get_current_scene()
+	setOn(on)
 
 
-
-func _process(delta):
+func _physics_process(delta):
 	if on:
 		make_laser()
-
+		next_laser.visible = true
 
 func setOn(_on):
 	on = _on
+	set_texture()
+
+func set_texture():
 	if on:
 		$Sprite.texture = load("res://GFX/Simple Turret2.png")
 	else:
@@ -98,14 +101,20 @@ func _input(event):
 
 func _on_PickupArea_mouse_entered():
 	mouse_in_drag = true
+	MouseManager.changeAnim("grabbing")
 #	print("can drag")
 
 func _on_PickupArea_mouse_exited():
 	mouse_in_drag = false
+	MouseManager.changeAnim("rotate")
+
 
 func _on_RotateArea_mouse_entered():
 	mouse_in_rotate = true
 #	print("can rotate")
+	MouseManager.changeAnim("rotate")
+
 
 func _on_RotateArea_mouse_exited():
 	mouse_in_rotate = false
+	MouseManager.changeAnim(null)
