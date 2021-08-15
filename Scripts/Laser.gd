@@ -26,6 +26,7 @@ func _ready():
 
 
 func _physics_process(_delta):
+	$LaserHitParticles.emitting = false
 	set_point_position(0, start_pos)
 	set_point_position(1, end_pos)
 	#visible = originating_turret.on
@@ -56,6 +57,8 @@ func _physics_process(_delta):
 		if !collider.is_in_group("reflective"):#collider.owner.is_in_group("turret") or 
 #			print(collider.name)
 			turn_off_next_laser(false)
+			$LaserHitParticles.emitting = true
+			$LaserHitParticles.position = end_pos
 		#update the next laser segment, as it's bouncing off of something.
 		else:
 			#figure out the position and angle of reflection of the next laser segment
