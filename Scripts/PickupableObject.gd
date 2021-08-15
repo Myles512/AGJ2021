@@ -22,13 +22,14 @@ func _ready():
 
 
 func _process(delta):
-	var overlapping_bodies = $TurretCollider.get_overlapping_areas()
-	if overlapping_bodies.size() > 0:
-		can_drop_here = false
-		$Sprite.modulate = Color(1, 0, 0)
-	else:
-		can_drop_here = true
-		$Sprite.modulate = Color(1, 1, 1)
+	if get_node("TurretCollider") != null:
+		var overlapping_bodies = $TurretCollider.get_overlapping_areas()
+		if overlapping_bodies.size() > 0:
+			can_drop_here = false
+			$Sprite.modulate = Color(1, 0, 0)
+		else:
+			can_drop_here = true
+			$Sprite.modulate = Color(1, 1, 1)
 
 
 func _input(event):
