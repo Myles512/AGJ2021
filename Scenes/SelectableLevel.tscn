@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/SelectableLevel.gd" type="Script" id=1]
 [ext_resource path="res://GFX/GreenBlock.png" type="Texture" id=2]
+[ext_resource path="res://SFX/FX/click_1.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.7246, 8.8382 )
@@ -19,6 +20,9 @@ visible = false
 position = Vector2( -0.8909, -1.52588e-05 )
 scale = Vector2( 0.450612, 0.05022 )
 texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

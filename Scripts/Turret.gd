@@ -51,8 +51,10 @@ func updatePowerState():
 
 func set_texture():
 	if on:
+		$PowerUp.play()
 		$Sprite.texture = load("res://GFX/Simple Turret2.png")
 	else:
+		$PowerDown.play()
 		$Sprite.texture = load("res://GFX/Simple Turret1.png")
 
 func make_laser():
@@ -109,12 +111,14 @@ func _input(event):
 		if event.is_pressed():
 			if mouse_in_drag:
 				dragging = true
+				$Pickup.play()
 			elif mouse_in_rotate:
 				rotating = true
 		else:
 			if !can_drop_here && pickup_start_pos != null:
 				global_position = pickup_start_pos
 			pickup_start_pos = null
+			$Place.play()
 			dragging = false
 			rotating = false
 

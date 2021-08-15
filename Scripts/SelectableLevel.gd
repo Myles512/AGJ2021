@@ -20,6 +20,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if mouseInBox:
 			emit_signal("startLevel")
+			$AudioStreamPlayer.play()
 
 func updatedLocked(locked):
 	$Sprite.visible = !locked

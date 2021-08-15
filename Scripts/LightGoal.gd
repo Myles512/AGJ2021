@@ -19,8 +19,12 @@ func _process(delta):
 		timeOn += delta
 	if timeOn > 1:
 		if not levelWon:
-			emit_signal("poweredOn")
 			levelWon = true
+			$AudioStreamPlayer.play()
+			$Timer.start()	# small delay so that the audio finishes playing
+			$Tween.interpolate_property($AudioStreamPlayer, "volume_db", 0, -60, 2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			$Tween.start()
+
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -45,3 +49,7 @@ func updatePowerState():
 		$Sprite.texture = load("res://GFX/Light Goal2.png")
 	else:
 		$Sprite.texture = load("res://GFX/Light Goal1.png")
+
+
+func _on_Timer_timeout():
+	emit_signal("poweredOn")

@@ -18,6 +18,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
+			$AudioStreamPlayer.play()
 			LevelTransition.transitionTo(false, "res://Scenes/LevelSelect.tscn")
 		#var err = get_tree().change_scene("res://Scenes/LevelSelect.tscn")
 		#if err:
