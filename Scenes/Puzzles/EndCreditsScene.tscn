@@ -24,7 +24,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 80.6697, -0.25, 0, 0.25, 0, 80.6697, -0.25, 0, 0.797542, 18.3236, 555.179, -1.58146, 13.4241, 0.25, 0 ),
+"points": PoolRealArray( 80.6697, -0.25, 0, 0.25, 0, 80.6697, -0.25, 0, 0.797542, 18.3236, 389.659, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1.8, 7 )
 }
 tracks/2/type = "value"
@@ -55,7 +55,7 @@ tracks/3/keys = {
 [node name="Node2D" type="Node2D"]
 
 [node name="Water" type="Sprite" parent="."]
-position = Vector2( 555.179, -3030.92 )
+position = Vector2( 389.659, -3038.93 )
 texture = ExtResource( 4 )
 
 [node name="Large Tower" type="Sprite" parent="."]
@@ -79,11 +79,12 @@ zoom = Vector2( 1.2, 1.2 )
 autoplay = "Camera"
 anims/Camera = SubResource( 1 )
 
-[node name="CreditsText" type="Label" parent="."]
-margin_left = 673.683
-margin_top = -3589.98
-margin_right = 850.683
-margin_bottom = -3473.98
+[node name="CreditsText2" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 588.099
+margin_top = -3511.08
+margin_right = 765.099
+margin_bottom = -3395.08
 rect_scale = Vector2( 2, 2 )
 text = "Light House
 
@@ -92,6 +93,53 @@ A Game By Nuclear Teacup
 Audio - Liam
 Art - Elliot
 Programming - Myles, Boris"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsText" type="Label" parent="."]
+margin_left = 586.317
+margin_top = -3512.87
+margin_right = 763.317
+margin_bottom = -3396.87
+rect_scale = Vector2( 2, 2 )
+text = "Light House
+
+A Game By Nuclear Teacup
+
+Audio - Liam
+Art - Elliot
+Programming - Myles, Boris"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsText2d2" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 568.34
+margin_top = -3249.55
+margin_right = 772.34
+margin_bottom = -3133.55
+rect_scale = Vector2( 2, 2 )
+text = "And from everyone on the team
+
+Thank you for playing! <3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsText2d" type="Label" parent="."]
+margin_left = 566.113
+margin_top = -3251.33
+margin_right = 770.113
+margin_bottom = -3135.33
+rect_scale = Vector2( 2, 2 )
+text = "And from everyone on the team
+
+Thank you for playing! <3"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
