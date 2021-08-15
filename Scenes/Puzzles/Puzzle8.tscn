@@ -44,7 +44,8 @@ position = Vector2( 1526, 345 )
 [node name="WallCollisions2" parent="." instance=ExtResource( 2 )]
 
 [node name="TopWall" parent="WallCollisions2" index="0"]
-position = Vector2( 528, -180 )
+position = Vector2( 528, 61 )
+scale = Vector2( 3.28, 5.06 )
 
 [node name="BottomWall" parent="WallCollisions2" index="1"]
 position = Vector2( 528, 301 )
