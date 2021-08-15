@@ -18,7 +18,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if mouseInBox:
+		if mouseInBox and unlocked:
 			emit_signal("startLevel")
 			$AudioStreamPlayer.play()
 
