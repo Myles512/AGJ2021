@@ -25,4 +25,6 @@ func transitionTo(fadeIn, _levelToTransitionTo):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "TransitionToBlack":
 		var err = get_tree().change_scene(levelToTransitionTo)
+		if err:
+			print(err, " occurred during transition")
 		transitionTo(true, null)

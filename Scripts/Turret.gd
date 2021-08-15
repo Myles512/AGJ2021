@@ -24,14 +24,12 @@ func _ready():
 
 
 
-func _process(delta):
+func _process(_delta):
 	if on and !power_up_sound_played:
-		print("here")
 		$PowerUp.play()
 		power_up_sound_played = true
 		power_down_sound_played = false
 	elif !on and !power_down_sound_played:
-		print("here")
 		$PowerDown.play()
 		power_up_sound_played = false
 		power_down_sound_played = true
@@ -83,7 +81,7 @@ func make_laser():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		var movement = event.get_relative()
+		#var movement = event.get_relative()
 		if rotating:
 #			movement.x *= rotate_speed
 #			rotation_degrees += movement.x
