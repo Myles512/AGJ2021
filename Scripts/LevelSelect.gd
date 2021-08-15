@@ -12,6 +12,9 @@ func _ready():
 			child.unlocked = true
 			child.updatedLocked(false)
 		i += 1
+	if 9 in GameManager.levelsComplete:
+		$RooftopLevel.unlocked = true
+		$RooftopLevel.updatedLocked(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,3 +29,8 @@ func startLevel():
 	if GameManager.curLevel != null:
 		var levelName = "res://Scenes/Puzzles/Puzzle" + str(GameManager.curLevel) + ".tscn"
 		LevelTransition.transitionTo(false, levelName)
+
+
+func _on_RooftopLevel_startLevel():
+	var levelName = "res://Scenes/Puzzles/EndCreditsScene.tscn"
+	LevelTransition.transitionTo(false, levelName)

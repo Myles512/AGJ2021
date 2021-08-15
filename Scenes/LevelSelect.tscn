@@ -70,9 +70,15 @@ levelID = 8
 position = Vector2( 0, -9 )
 levelID = 9
 
+[node name="RooftopLevel" parent="." instance=ExtResource( 3 )]
+position = Vector2( 508, 146.943 )
+levelID = 9
+
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 643.579, -55.9382 )
 amount = 800
 lifetime = 10.0
 preprocess = 1.0
 process_material = SubResource( 1 )
+
+[connection signal="startLevel" from="RooftopLevel" to="." method="_on_RooftopLevel_startLevel"]

@@ -22,7 +22,7 @@ func _ready():
 
 
 func _process(delta):
-	if get_node("TurretCollider") != null:
+	if has_node("TurretCollider"):
 		var overlapping_bodies = $TurretCollider.get_overlapping_areas()
 		if overlapping_bodies.size() > 0:
 			can_drop_here = false

@@ -3,6 +3,7 @@ extends Control
 
 var fadingIn = false
 var levelToTransitionTo = null
+signal finishedTransitioning
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,3 +29,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		if err:
 			print(err, " occurred during transition")
 		transitionTo(true, null)
+	else:
+		emit_signal("finishedTransitioning")
