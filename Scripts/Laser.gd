@@ -72,6 +72,9 @@ func _physics_process(delta):
 		end_pos = start_pos
 		end_pos.y -= laser_distance
 		turn_off_next_laser(false)
+	if end_pos != start_pos:
+		$Particles2D.position = (end_pos+start_pos)/2
+		$Particles2D.process_material.emission_box_extents.y = (end_pos+start_pos).length()/2
 
 
 
