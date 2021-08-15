@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/LightGoal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/ElecBomb.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/5SegmentNonreflectiveWall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/WallCollisions.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GFX/instructions 2.png" type="Texture" id=10]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 6 )
@@ -62,6 +63,10 @@ position = Vector2( -2880, -0.0738554 )
 
 [node name="RightWall" parent="WallCollisions" index="3"]
 position = Vector2( 1139, 341 )
+
+[node name="AnimatedSprite" type="Sprite" parent="."]
+position = Vector2( 851, 662 )
+texture = ExtResource( 10 )
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]
 
