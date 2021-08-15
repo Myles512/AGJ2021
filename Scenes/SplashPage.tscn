@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GFX/Light_House_Logo.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/SplashPage.gd" type="Script" id=2]
 [ext_resource path="res://SFX/FX/click_1.wav" type="AudioStream" id=3]
+[ext_resource path="res://PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://GFX/Nuclear_Teacup_logo_transparent.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FlashingText"
@@ -19,6 +21,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 4 )
 
 [node name="SplashPage" type="Node2D"]
 script = ExtResource( 2 )
@@ -52,3 +57,25 @@ anims/FlashingText = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="NuclearLogo" type="Sprite" parent="."]
+position = Vector2( 132, 452 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 25.0
+margin_top = 547.5
+margin_right = 249.0
+margin_bottom = 582.5
+custom_fonts/font = SubResource( 2 )
+text = "A game by
+Nuclear Teacup"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
