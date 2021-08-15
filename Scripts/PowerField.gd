@@ -18,12 +18,12 @@ func specialSetOn(_on):
 	on = _on
 	#print(on)
 	if on and lastPlayedPowerSfx != "up":
-		$Powerup.play()
+		#$Powerup.play()
 #		print(lastPlayedPowerSfx)
 		lastPlayedPowerSfx = "up"
 	elif !on and lastPlayedPowerSfx != "down":
 #		print(lastPlayedPowerSfx)
-		$Powerdown.play()
+		#$Powerdown.play()
 		lastPlayedPowerSfx = "down"
 	else:
 		pass

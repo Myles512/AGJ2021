@@ -81,7 +81,7 @@ func make_laser():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		var movement = event.get_relative()
+		#var movement = event.get_relative()
 		if rotating:
 #			movement.x *= rotate_speed
 #			rotation_degrees += movement.x
