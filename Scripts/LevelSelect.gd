@@ -22,4 +22,5 @@ func updateSelectedLevel(id):
 
 
 func startLevel():
-	get_tree().change_scene("res://Scenes/Puzzles/Puzzle" + str(GameManager.curLevel) + ".tscn")
+	if GameManager.curLevel != null:
+		get_tree().change_scene("res://Scenes/Puzzles/Puzzle" + str(GameManager.curLevel) + ".tscn")

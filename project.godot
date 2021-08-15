@@ -10,15 +10,20 @@ config_version=4
 
 [application]
 
-config/name="AGJ2021"
-run/main_scene="res://Scenes/LevelSelect.tscn"
-config/icon="res://icon.png"
+config/name="Light House"
+run/main_scene="res://Scenes/SplashPage.tscn"
+config/icon="res://GFX/Light Goal2.png"
 
 [autoload]
 
 Bgm="*res://Scenes/BGM.tscn"
 GameManager="*res://Scenes/GameManager.tscn"
 MouseManager="*res://Scenes/MouseManager.tscn"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
