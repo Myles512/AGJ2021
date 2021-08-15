@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GFX/ElectritionRun.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/EndCreditsScene.gd" type="Script" id=2]
 [ext_resource path="res://GFX/Water.png" type="Texture" id=4]
 [ext_resource path="res://GFX/Large Tower.png" type="Texture" id=5]
 
@@ -14,7 +15,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( -248.786, -0.25, 0, 0.862513, 1.67584, 214.658, -1.54897, 17.452, 0.25, 0 ),
+"points": PoolRealArray( -248.786, -0.25, 0, 0.862513, 1.67584, 334.658, -1.54897, 17.452, 0.25, 0 ),
 "times": PoolRealArray( 1.8, 7 )
 }
 tracks/1/type = "bezier"
@@ -24,7 +25,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 80.6697, -0.25, 0, 0.25, 0, 80.6697, -0.25, 0, 0.797542, 18.3236, 325.179, -1.58146, 13.4241, 0.25, 0 ),
+"points": PoolRealArray( 80.6697, -0.25, 0, 0.25, 0, 80.6697, -0.25, 0, 0.797542, 18.3236, 455.179, -1.58146, 13.4241, 0.25, 0 ),
 "times": PoolRealArray( 0, 1.8, 7 )
 }
 tracks/2/type = "value"
@@ -53,9 +54,10 @@ tracks/3/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="Water" type="Sprite" parent="."]
-position = Vector2( 325.179, -3030.92 )
+position = Vector2( 80.6697, -3030.92 )
 texture = ExtResource( 4 )
 
 [node name="Large Tower" type="Sprite" parent="."]
@@ -63,13 +65,13 @@ position = Vector2( 119.943, -1731.16 )
 texture = ExtResource( 5 )
 
 [node name="Electrician" type="Sprite" parent="Large Tower"]
-position = Vector2( -202.101, -1525.65 )
+position = Vector2( -475.101, -1525.65 )
 scale = Vector2( 0.980904, 0.980904 )
 texture = ExtResource( 1 )
 hframes = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 214.658, -3252.91 )
+position = Vector2( -248.786, -3252.91 )
 rotation = 3.14159
 scale = Vector2( 26.8658, -13.0411 )
 current = true
@@ -78,3 +80,21 @@ zoom = Vector2( 1.2, 1.2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Camera"
 anims/Camera = SubResource( 1 )
+
+[node name="Credits" type="Label" parent="."]
+margin_left = 534.101
+margin_top = -3569.56
+margin_right = 711.101
+margin_bottom = -3453.56
+rect_scale = Vector2( 2, 2 )
+text = "Thanks For Playing
+
+A Game by Nuclear Teacup
+
+Liam - Audio
+Elliot - Art
+Myles, Boris - Programming"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
