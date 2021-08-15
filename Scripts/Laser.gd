@@ -25,7 +25,7 @@ func _ready():
 
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	set_point_position(0, start_pos)
 	set_point_position(1, end_pos)
 	#visible = originating_turret.on

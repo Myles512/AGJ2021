@@ -17,7 +17,8 @@ func _ready():
 func specialSetOn(_on):
 	on = _on
 	$AnimatedSprite.visible = on
-	$Area2D/CollisionShape2D.disabled = !on
+	$Area2D/CollisionShape2D.set_deferred("disabled", !on)
+
 
 func _on_Area2D_area_entered(area):
 	var obj = area.owner
@@ -27,5 +28,17 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_area_exited(area):
 	var obj = area.owner
+	if is_instance_valid(obj) and obj.has_method("updatePowerSource"):
+		obj.updatePowerSource(self, false)
+
+
+func _on_Area2D_body_entered(body):
+	var obj = body.owner
+	if obj.has_method("updatePowerSource"):
+		obj.updatePowerSource(self, true)
+
+
+func _on_Area2D_body_exited(body):
+	var obj = body.owner
 	if is_instance_valid(obj) and obj.has_method("updatePowerSource"):
 		obj.updatePowerSource(self, false)

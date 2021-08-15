@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://Scripts/PickupableObject.gd"
 
 
 var on = false
@@ -13,6 +13,8 @@ func _ready():
 #	pass
 
 func updatePowerSource(powerSource, active):
+	if powerSource == $PowerField:
+		return	# no point updating self
 	if active:
 		if not powerSources.has(powerSource):
 			powerSources.append(powerSource)

@@ -17,4 +17,6 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+		var err = get_tree().change_scene("res://Scenes/LevelSelect.tscn")
+		if err:
+			print("Scene change failed?")

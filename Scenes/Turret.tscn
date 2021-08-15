@@ -8,7 +8,7 @@
 radius = 45.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 75.0
+radius = 91.6324
 
 [node name="Turret" type="Node2D" groups=[
 "turret",
