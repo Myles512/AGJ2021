@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/LightGoal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/WallCollisions.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/3SegmentNonreflectiveWall.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/5SegmentNonreflectiveWall.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/3SegmentTurretPlacable.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BackToLevelSelectArrow.tscn" type="PackedScene" id=12]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 6 )
@@ -69,6 +70,12 @@ position = Vector2( 800, 684 )
 
 [node name="3SegmentTurretPlacable" parent="." instance=ExtResource( 11 )]
 position = Vector2( 579, 576 )
+
+[node name="BackToLevelSelectButton" parent="." instance=ExtResource( 12 )]
+margin_left = -430.969
+margin_top = -239.82
+margin_right = -334.969
+margin_bottom = -143.82
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]
 

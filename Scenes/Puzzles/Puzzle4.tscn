@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/LightGoal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/3SegmentNonreflectiveWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/5SegmentNonreflectiveWall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/WallCollisions.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/BackToLevelSelectArrow.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 6 )
@@ -72,6 +73,12 @@ position = Vector2( -2880, 0.147711 )
 
 [node name="RightWall" parent="WallCollisions" index="3"]
 position = Vector2( 1139, 341 )
+
+[node name="BackToLevelSelectButton" parent="." instance=ExtResource( 10 )]
+margin_left = -593.845
+margin_top = -231.195
+margin_right = -497.845
+margin_bottom = -135.195
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]
 
