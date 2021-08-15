@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MouseManager.changeAnim(null)
 	var i = 1
 	for child in $"Tower Level Select".get_children():
 		child.connect("levelSelected", self, "updateSelectedLevel")

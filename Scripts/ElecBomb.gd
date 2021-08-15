@@ -1,8 +1,8 @@
 extends "res://Scripts/PickupableObject.gd"
 
 
-var on = false
-var lastOn = false
+export(bool) var on = false
+var lastOn = null
 var powerSources = []
 
 # Called when the node enters the scene tree for the first time.
