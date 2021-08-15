@@ -7,30 +7,18 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="ReflectiveSurface" type="Area2D" parent="." groups=[
-"reflective",
-] instance=ExtResource( 1 )]
+[node name="ReflectiveSurface" parent="." instance=ExtResource( 1 )]
 position = Vector2( 144, 0 )
 rotation = -1.57079
-collision_layer = 8
 
-[node name="ReflectiveSurface2" type="Area2D" parent="." groups=[
-"reflective",
-] instance=ExtResource( 1 )]
+[node name="ReflectiveSurface2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 48, 0 )
 rotation = -1.57079
-collision_layer = 8
 
-[node name="ReflectiveSurface3" type="Area2D" parent="." groups=[
-"reflective",
-] instance=ExtResource( 1 )]
+[node name="ReflectiveSurface3" parent="." instance=ExtResource( 1 )]
 position = Vector2( -48, 0 )
 rotation = -1.57079
-collision_layer = 8
 
-[node name="ReflectiveSurface4" type="Area2D" parent="." groups=[
-"reflective",
-] instance=ExtResource( 1 )]
+[node name="ReflectiveSurface4" parent="." instance=ExtResource( 1 )]
 position = Vector2( -144, 0 )
 rotation = -1.57079
-collision_layer = 8
