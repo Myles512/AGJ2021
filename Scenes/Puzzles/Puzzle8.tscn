@@ -29,6 +29,33 @@ position = Vector2( 84.0919, 70.2224 )
 
 [node name="WallCollisions" parent="." instance=ExtResource( 2 )]
 
+[node name="TopWall" parent="WallCollisions" index="0"]
+position = Vector2( 528, -180 )
+
+[node name="BottomWall" parent="WallCollisions" index="1"]
+position = Vector2( 526, 852 )
+
+[node name="LeftWall" parent="WallCollisions" index="2"]
+position = Vector2( -372, 342 )
+
+[node name="RightWall" parent="WallCollisions" index="3"]
+position = Vector2( 1526, 345 )
+
+[node name="WallCollisions2" parent="." instance=ExtResource( 2 )]
+
+[node name="TopWall" parent="WallCollisions2" index="0"]
+position = Vector2( 528, -180 )
+
+[node name="BottomWall" parent="WallCollisions2" index="1"]
+position = Vector2( 528, 301 )
+scale = Vector2( 3.36, 0.1 )
+
+[node name="LeftWall" parent="WallCollisions2" index="2"]
+position = Vector2( 371, -1004 )
+
+[node name="RightWall" parent="WallCollisions2" index="3"]
+position = Vector2( 685, -998 )
+
 [node name="ElecBomb" parent="." instance=ExtResource( 7 )]
 position = Vector2( -76.1078, 678.174 )
 
@@ -39,3 +66,6 @@ position = Vector2( 388.941, 542.758 )
 position = Vector2( 1049.99, 567.703 )
 
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]
+
+[editable path="WallCollisions"]
+[editable path="WallCollisions2"]

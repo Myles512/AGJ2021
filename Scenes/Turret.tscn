@@ -9,10 +9,10 @@
 [ext_resource path="res://SFX/FX/turret_place.wav" type="AudioStream" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 45.0
+radius = 40.0125
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 91.6324
+radius = 82.0061
 
 [node name="Turret" type="Node2D" groups=[
 "turret",

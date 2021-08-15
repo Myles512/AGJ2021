@@ -33,4 +33,15 @@ position = Vector2( 78, 569 )
 
 [node name="WallCollisions" parent="." instance=ExtResource( 2 )]
 
+[node name="TopWall" parent="WallCollisions" index="0"]
+position = Vector2( 525, -82 )
+
+[node name="BottomWall" parent="WallCollisions" index="1"]
+position = Vector2( 527, 755 )
+
+[node name="RightWall" parent="WallCollisions" index="3"]
+position = Vector2( 1139, 341 )
+
 [connection signal="poweredOn" from="LightGoal" to="." method="_on_LightGoal_poweredOn"]
+
+[editable path="WallCollisions"]
