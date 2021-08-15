@@ -41,7 +41,7 @@ laser_distance = 1500
 position = Vector2( 0, -5 )
 enabled = true
 cast_to = Vector2( 0, -300 )
-collision_mask = 28
+collision_mask = 60
 collide_with_areas = true
 
 [node name="Particles2D" type="Particles2D" parent="."]
