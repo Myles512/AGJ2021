@@ -2,19 +2,27 @@ extends Node2D
 
 
 var on = false
-
+var powerSources = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	setOn(on)
-
+	updatePowerState()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-func setOn(_on):
-	on = _on
+func updatePowerSource(powerSource, active):
+	if active:
+		if not powerSources.has(powerSource):
+			powerSources.append(powerSource)
+	else:
+		if powerSources.has(powerSource):
+			powerSources.remove(powerSources.find(powerSource))
+	updatePowerState()
+
+func updatePowerState():
+	on = len(powerSources) > 0	# true if greater than 0
 	$PowerField.specialSetOn(on)
 	if on:
 		$Sprite.texture = load("res://GFX/Elec Bomb2.png")
